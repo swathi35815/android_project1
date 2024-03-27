@@ -5,32 +5,51 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    tools:context=".MainActivity">
+    android:background="@drawable/logo_shop"
+    tools:context="com.ecommerce.MainActivity">
+
+    <Button
+        android:id="@+id/buttonMainActivityLogin"
+        android:layout_width="183dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#AC8868"
+        android:text="LOGIN"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMainActivitySignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/buttonMainActivitySignUp"
+        android:layout_width="183dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="79dp"
+        android:backgroundTint="#AC8868"
+        android:text="SIGN UP"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMainActivityLogin" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="260dp"
-        app:srcCompat="@drawable/purchase"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="152dp" />
+        android:id="@+id/imageView2"
+        android:layout_width="294dp"
+        android:layout_height="176dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="306dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMainActivityLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_shop2" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="183dp"
-        android:layout_height="48dp"
-        android:text="LOGIN"
-        android:elevation="20dp"
-        android:background="@drawable/shadow"
-        tools:layout_editor_absoluteX="114dp"
-        tools:layout_editor_absoluteY="504dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="183dp"
-        android:layout_height="48dp"
-        android:text="SIGN UP"
-        tools:layout_editor_absoluteX="114dp"
-        tools:layout_editor_absoluteY="576dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

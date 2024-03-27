@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
 }
 
 android {
@@ -46,4 +47,13 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.google.android.material:material:1.3.0-alpha03’")
+
+    implementation("com.squareup.retrofit2:retrofit:2.7.2")
+    implementation("com.squareup.retrofit2:converter-gson:2.7.2")
+    implementation("com.squareup.okhttp3:okhttp:3.6.0")
+    implementation("com.squareup.picasso:picasso:2.5.2")
+
+    implementation ("androidx.room:room-runtime:2.2.5")
+    implementation ("androidx.room:room-ktx:2.2.5")
+    kapt ("androidx.room:room-compiler:2.2.5")
 }

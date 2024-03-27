@@ -6,16 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context="com.ecommerce.LoginActivity">
+    tools:context="com.ecommerce.SignUpActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="70dp"
         android:background="#26FFFFFF"
         android:divider="@drawable/divider"
         android:orientation="vertical"
@@ -25,11 +25,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <ImageView
-            android:id="@+id/imageViewLoginPageLoginIcon"
+            android:id="@+id/imageViewSignUpPageSignUpIcon"
             android:layout_width="match_parent"
             android:layout_height="125dp"
-            android:padding="0dp"
             app:srcCompat="@drawable/logo_shop2" />
 
         <LinearLayout
@@ -39,7 +39,37 @@
             android:paddingLeft="5dp">
 
             <ImageView
-                android:id="@+id/imageViewLoginPageEmailIcon"
+                android:id="@+id/imageViewSignUpPageUserNameIcon"
+                android:layout_width="45dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0"
+                app:srcCompat="@drawable/icons8_user_48" />
+
+            <EditText
+                android:id="@+id/editTextSignUpPageFullName"
+                android:layout_width="275dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:width="0dp"
+                android:background="#4DFFFFFF"
+                android:ems="10"
+                android:hint="Full Name"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFEFE"
+                android:textSize="17dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp">
+
+            <ImageView
+                android:id="@+id/imageViewLSignUpPageEmailIcon"
                 android:layout_width="45dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
@@ -47,7 +77,7 @@
                 app:srcCompat="@android:drawable/ic_dialog_email" />
 
             <EditText
-                android:id="@+id/editTextLoginPageLoginEmail"
+                android:id="@+id/editTextSignUpPageSignUpEmail"
                 android:layout_width="275dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
@@ -69,7 +99,37 @@
             android:paddingLeft="5dp">
 
             <ImageView
-                android:id="@+id/imageViewLoginPagePasswordIcon"
+                android:id="@+id/imageViewSignUpPagePhoneNumIcon"
+                android:layout_width="45dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0"
+                app:srcCompat="@android:drawable/stat_sys_speakerphone" />
+
+            <EditText
+                android:id="@+id/editTextSignUpPagePhoneNum"
+                android:layout_width="275dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:width="0dp"
+                android:background="#4DFFFFFF"
+                android:ems="10"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFEFE"
+                android:textSize="17dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp">
+
+            <ImageView
+                android:id="@+id/imageViewSignUpPagePasswordIcon"
                 android:layout_width="45dp"
                 android:layout_height="38dp"
                 android:layout_gravity="center_vertical"
@@ -77,7 +137,7 @@
                 app:srcCompat="@android:drawable/ic_lock_idle_lock" />
 
             <EditText
-                android:id="@+id/editTextLoginPageLoginPassword"
+                android:id="@+id/editTextSignUpPageSignUpPassword"
                 android:layout_width="275dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
@@ -91,49 +151,16 @@
                 android:textSize="17dp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="1dp">
-
-            <CheckBox
-                android:id="@+id/checkBoxLoginPageRememberPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="#FFFFFF"
-                android:background="#00FFFFFF"
-                android:text="Remember me"
-                android:textColor="#FFFFFF"
-                android:textColorHighlight="#FFFFFF"
-                android:textColorLink="#FFFFFF" />
-
-            <Button
-                android:id="@+id/buttonLoginPageForgotPassword"
-                android:layout_width="195dp"
-                android:layout_height="38dp"
-                android:width="0dp"
-                android:background="#00FFFFFF"
-                android:text="Forgot Password?"
-                android:textAlignment="textEnd"
-                android:textColor="#FFFFFF"
-                android:textColorHighlight="#FFFFFF"
-                android:textColorLink="#FFFFFF" />
-
-
-        </LinearLayout>
-
 
         <Button
-            android:id="@+id/buttonLoginPageLogin"
+            android:id="@+id/buttonSignUpPageSignUp"
             android:layout_width="255dp"
             android:layout_height="58dp"
             android:layout_gravity="center_horizontal"
-            android:backgroundTint="#CC675543"
-            android:text="LOGIN"
+            android:text="SIGN UP"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#FFFFFF"
+            android:backgroundTint="#CC675543"
             android:textSize="20dp" />
 
         <LinearLayout
@@ -142,23 +169,23 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textViewLoginPageSignUp"
+                android:id="@+id/textViewSignUpPageSignIn"
                 android:layout_width="171dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="Don't have an account?"
+                android:text="Already have an account?"
                 android:textAlignment="textEnd"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF" />
 
             <Button
-                android:id="@+id/buttonLoginPageSignUp"
+                android:id="@+id/buttonSignUpPageSignIn"
                 android:layout_width="wrap_content"
                 android:layout_height="69dp"
                 android:layout_weight="1"
                 android:background="#00FFFFFF"
                 android:padding="10dp"
-                android:text="Sign up"
+                android:text="Sign In"
                 android:textAlignment="viewStart"
                 android:textColor="#FFFFFF"
                 android:textColorHighlight="#FFFFFF"
@@ -168,4 +195,6 @@
 
 
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

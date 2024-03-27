@@ -1,4 +1,4 @@
-package com.example.e_commerce
+package com.ecommerce
 
 import org.junit.Test
 
