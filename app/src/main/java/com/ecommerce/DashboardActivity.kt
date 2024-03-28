@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ecommerce.databaseUser.UsersDB
@@ -53,7 +54,8 @@ class DashboardActivity : AppCompatActivity() {
             ) {
                 var imageResponse : List<ImageData>? = response?.body()
                 var recyclerViewDisplayImages = findViewById<RecyclerView>(R.id.recyclerViewDisplayImageData)
-                recyclerViewDisplayImages.layoutManager = LinearLayoutManager(this@DashboardActivity, RecyclerView.VERTICAL, false)
+                //recyclerViewDisplayImages.layoutManager = LinearLayoutManager(this@DashboardActivity, RecyclerView.VERTICAL, false)
+                recyclerViewDisplayImages.layoutManager = GridLayoutManager(this@DashboardActivity, 2, RecyclerView.VERTICAL, false)
                 var myAdapter = ImageAdapter(imageResponse)
                 recyclerViewDisplayImages.adapter = myAdapter
                 myAdapter.notifyDataSetChanged()
