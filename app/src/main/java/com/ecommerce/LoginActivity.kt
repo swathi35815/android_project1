@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
         var editTextPassword = findViewById<EditText>(R.id.editTextLoginPageLoginPassword)
 
         // Auto fill Email ID and Password
-        editTextEmailId.setText(sp.getString("keyEmailID", ""))
+        editTextEmailId.setText(sp.getString("keyEmailId", ""))
         editTextPassword.setText(sp.getString("keyPassword", ""))
 
 
@@ -56,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
                         if(verifyCredentials != null){
                             var rememberPasswordCheckBox = findViewById<CheckBox>(R.id.checkBoxLoginPageRememberPassword)
                             if(rememberPasswordCheckBox.isChecked) {
-                                editor.putString("keyEmailID", emailId)
+                                editor.putString("keyEmailId", emailId)
                                 editor.putString("keyPassword", password)
                             }
                             else{
