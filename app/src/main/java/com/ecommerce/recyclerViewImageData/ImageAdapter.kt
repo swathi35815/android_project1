@@ -20,7 +20,7 @@ class ImageAdapter(var imageDataList : List<ImageData>?) : RecyclerView.Adapter<
         var id = itemView.findViewById<TextView>(R.id.textViewImageDataID)
         var title = itemView.findViewById<TextView>(R.id.textViewImageDataTitle)
         var url = itemView.findViewById<TextView>(R.id.textViewImageDataURL)
-        var image = itemView.findViewById<ImageView>(R.id.imageButtonImageData)
+        var image = itemView.findViewById<ImageButton>(R.id.imageButtonImageData)
 
         fun myBindData(imageData : ImageData){
             /*id.text = imageData.id.toString()
