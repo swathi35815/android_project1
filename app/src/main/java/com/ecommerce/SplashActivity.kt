@@ -1,3 +1,7 @@
+/**
+ * Activity class for the splash screen.
+ * Displays the app logo briefly before navigating to the main screen.
+ */
 package com.ecommerce
 
 import android.content.Intent
@@ -7,32 +11,32 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.e_commerce.R
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import kotlin.concurrent.thread
 
+/**
+ * AppCompatActivity subclass representing the splash screen.
+ */
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Enable edge-to-edge display for immersive experience
         enableEdgeToEdge()
+
+        // Set the layout for the activity
         setContentView(R.layout.activity_splash)
+
+        // Apply window insets listener to adjust padding for system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        /*GlobalScope.launch{
-            for(i in 3 downTo 1) {
-                delay(1000)
-            }
-        }*/
-
-        thread{
+        // Use a separate thread to simulate a delay before navigating to the main screen
+        thread {
             Thread.sleep(3000)
-            var mainIntent = Intent(this, MainActivity::class.java)
+            val mainIntent = Intent(this, MainActivity::class.java)
             startActivity(mainIntent)
         }
     }

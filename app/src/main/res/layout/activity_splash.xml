@@ -43,7 +43,7 @@
         android:text="Shop with us..."
         android:textAlignment="center"
         android:textColor="#675543"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

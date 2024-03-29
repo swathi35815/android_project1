@@ -1,3 +1,7 @@
+/**
+ * Activity class for the dashboard screen.
+ * Displays user information and a grid of images fetched from an API.
+ */
 package com.ecommerce
 
 import android.os.Bundle
@@ -11,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ecommerce.databaseUser.UsersDB
 import com.ecommerce.recyclerViewImageData.ApiImageClient
@@ -24,43 +27,57 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+/**
+ * AppCompatActivity subclass representing the dashboard screen.
+ */
 class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Enable edge-to-edge display for immersive experience
         enableEdgeToEdge()
+
+        // Set the layout for the activity
         setContentView(R.layout.activity_dashboard)
+
+        // Apply window insets listener to adjust padding for system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        var db: UsersDB = UsersDB.getDatabase(this)
-        var h = Handler()
 
-        var textViewUserName = findViewById<TextView>(R.id.textViewDashboardWelcomeUser)
-        var intentEmailId = intent.extras!!.getString("keyEmailId")
+        // Obtain an instance of the UsersDB
+        val db: UsersDB = UsersDB.getDatabase(this)
+        val h = Handler()
+
+        // Find views by their IDs
+        val textViewUserName = findViewById<TextView>(R.id.textViewDashboardWelcomeUser)
+        val intentEmailId = intent.extras!!.getString("keyEmailId")
+
+        // Use coroutine for asynchronous database query
         GlobalScope.launch {
-            var userFullName = intentEmailId?.let { db.usersDao().getFullNameByEmail(it) }
+            val userFullName = intentEmailId?.let { db.usersDao().getFullNameByEmail(it) }
             h.post{
                 textViewUserName.setText("Welcome $userFullName")
             }
         }
 
-        var makecall = ApiImageClient.retrofitBuilder.getData()
-        makecall.enqueue(object : Callback<List<ImageData>> {
-            override fun onResponse(
-                call: Call<List<ImageData>>,
-                response: Response<List<ImageData>>
-            ) {
-                var imageResponse : List<ImageData>? = response?.body()
-                var recyclerViewDisplayImages = findViewById<RecyclerView>(R.id.recyclerViewDisplayImageData)
-                //recyclerViewDisplayImages.layoutManager = LinearLayoutManager(this@DashboardActivity, RecyclerView.VERTICAL, false)
+        // Make API call to fetch image data
+        val makeCall = ApiImageClient.retrofitBuilder.getData()
+        makeCall.enqueue(object : Callback<List<ImageData>> {
+            override fun onResponse(call: Call<List<ImageData>>, response: Response<List<ImageData>>) {
+                val imageResponse : List<ImageData>? = response.body()
+                val recyclerViewDisplayImages = findViewById<RecyclerView>(R.id.recyclerViewDisplayImageData)
+
+                // Set up RecyclerView layout manager and adapter
                 recyclerViewDisplayImages.layoutManager = GridLayoutManager(this@DashboardActivity, 2, RecyclerView.VERTICAL, false)
-                var myAdapter = ImageAdapter(imageResponse)
+                val myAdapter = ImageAdapter(imageResponse)
                 recyclerViewDisplayImages.adapter = myAdapter
                 myAdapter.notifyDataSetChanged()
 
-                var progressBarImagesLoader = findViewById<ProgressBar>(R.id.progressBarDashboardImageDataLoad)
+                // Hide progress bar when data is loaded
+                val progressBarImagesLoader = findViewById<ProgressBar>(R.id.progressBarDashboardImageDataLoad)
                 if(recyclerViewDisplayImages.isDirty){
                     progressBarImagesLoader.visibility = View.INVISIBLE
                 }

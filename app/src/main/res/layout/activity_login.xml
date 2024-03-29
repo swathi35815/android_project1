@@ -59,7 +59,7 @@
                 android:padding="10dp"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#FFFEFE"
-                android:textSize="17dp" />
+                android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -88,7 +88,7 @@
                 android:padding="10dp"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#FFFFFF"
-                android:textSize="17dp" />
+                android:textSize="17sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -134,7 +134,7 @@
             android:text="LOGIN"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -163,7 +163,7 @@
                 android:textColor="#FFFFFF"
                 android:textColorHighlight="#FFFFFF"
                 android:textColorLink="#864BED"
-                android:textSize="17dp" />
+                android:textSize="17sp" />
         </LinearLayout>
 
 
