@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="25dp"
         android:background="#675543"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/MyToolbarStyle"
@@ -40,6 +40,19 @@
             android:textSize="25sp"
             tools:layout_editor_absoluteX="84dp"
             tools:layout_editor_absoluteY="16dp" />
+
+        <Button
+            android:id="@+id/buttonCartDashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/brown"
+            android:text="Cart"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorLink="#FFFFFF"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="230dp"
+            tools:layout_editor_absoluteY="0dp" />
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
@@ -57,23 +70,21 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewDisplayImageData"
         android:layout_width="match_parent"
-        android:layout_height="560dp"
-        android:layout_marginTop="53dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="38dp"
         android:layout_marginBottom="48dp"
         android:foregroundGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textViewDashboardWelcomeUser"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="@+id/textViewDashboardWelcomeUser"
-        app:layout_constraintTop_toTopOf="@+id/textViewDashboardWelcomeUser"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/textViewDashboardWelcomeUser" />
 
     <ProgressBar
         android:id="@+id/progressBarDashboardImageDataLoad"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="341dp"
+        android:layout_marginBottom="336dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

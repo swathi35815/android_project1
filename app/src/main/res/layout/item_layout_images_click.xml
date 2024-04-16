@@ -14,24 +14,95 @@
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:layout_width="349dp"
+        android:layout_height="135dp"
         android:background="@drawable/gradient_item">
 
         <ImageButton
             android:id="@+id/imageButtonImageData"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="11dp"
-            android:layout_marginEnd="13dp"
-            android:layout_marginBottom="11dp"
-            android:foregroundGravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="17dp"
+            android:foregroundGravity="center_vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout9"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textViewProductTitle"
+            android:layout_width="176dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="28dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#FAEABB"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonImageData"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="1dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButtonImageData"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProductTitle">
+
+            <TextView
+                android:id="@+id/textViewQty"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:inputType="number"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="28dp"
+                android:layout_height="49dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imageButtonAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    app:srcCompat="@drawable/icons8_add_24" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonSubtract"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    app:srcCompat="@drawable/icons8_minus_24" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#9F917C"
+                android:text="Add"
+                android:textColor="#FFFFFF"
+                android:textColorLink="#FFFFFF" />
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

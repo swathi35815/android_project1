@@ -15,6 +15,9 @@
         android:theme="@style/Theme.ECommerce"
         tools:targetApi="31">
         <activity
+            android:name="com.ecommerce.CartActivity"
+            android:exported="false" />
+        <activity
             android:name="com.ecommerce.DisplayProductDetails"
             android:exported="false" />
         <activity

@@ -4,12 +4,14 @@
  */
 package com.ecommerce
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -76,8 +78,8 @@ class DashboardActivity : AppCompatActivity() {
                 val recyclerViewDisplayImages = findViewById<RecyclerView>(R.id.recyclerViewDisplayImageData)
 
                 // Set up RecyclerView layout manager and adapter
-                recyclerViewDisplayImages.layoutManager = GridLayoutManager(this@DashboardActivity, 2, RecyclerView.VERTICAL, false)
-                val myAdapter = ImageAdapter(imageResponse)
+                recyclerViewDisplayImages.layoutManager = GridLayoutManager(this@DashboardActivity, 1, RecyclerView.VERTICAL, false)
+                val myAdapter = ImageAdapter(imageResponse, intentEmailId)
                 recyclerViewDisplayImages.adapter = myAdapter
                 myAdapter.notifyDataSetChanged()
 
@@ -97,6 +99,13 @@ class DashboardActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.title = ""
+
+        var cartButton = findViewById<Button>(R.id.buttonCartDashboard)
+        cartButton.setOnClickListener {
+            val cartIntent = Intent(this, CartActivity::class.java)
+            cartIntent.putExtra("keyEmailId", intentEmailId)
+            startActivity(cartIntent)
+        }
 
     }
 
